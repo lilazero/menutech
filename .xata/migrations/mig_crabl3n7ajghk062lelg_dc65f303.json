@@ -1,0 +1,11 @@
+{
+  "id": "mig_crabl3n7ajghk062lelg",
+  "checksum": "1:dc65f3034802dea80a8d7661dc8c81678abaee5310da0396941e3d7fb3ce85a1",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Produktet"
+      }
+    }
+  ]
+}

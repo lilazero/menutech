@@ -1,0 +1,17 @@
+{
+  "id": "mig_crablhsb6en8psfmr1m0",
+  "parentID": "mig_crabl3n7ajghk062lelg",
+  "checksum": "1:30eea8d6d034a794873f785ea4c053c73ed46da50c70be8036ee2c93a455dec8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "emriProduktetit",
+          "type": "text",
+          "defaultValue": "Pa Emer"
+        },
+        "table": "Produktet"
+      }
+    }
+  ]
+}

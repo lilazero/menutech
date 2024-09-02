@@ -1,0 +1,16 @@
+{
+  "id": "mig_crabm1cb6en8psfmr1n0",
+  "parentID": "mig_crabltm61uudupnf9lbg",
+  "checksum": "1:27398cc3c72ada002c8bc336d6c32eab40c15be0769f8b4a85d51ad0592938db",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "productCreator",
+          "type": "text"
+        },
+        "table": "Produktet"
+      }
+    }
+  ]
+}

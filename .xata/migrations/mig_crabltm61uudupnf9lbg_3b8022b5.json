@@ -1,0 +1,14 @@
+{
+  "id": "mig_crabltm61uudupnf9lbg",
+  "parentID": "mig_crablhsb6en8psfmr1m0",
+  "checksum": "1:3b8022b5f57a60bc7be719edf98a8340800a42ea938e67a29721dc06ee072f09",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "productName",
+        "oldName": "emriProduktetit",
+        "table": "Produktet"
+      }
+    }
+  ]
+}

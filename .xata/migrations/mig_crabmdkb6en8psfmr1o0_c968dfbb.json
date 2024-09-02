@@ -1,0 +1,17 @@
+{
+  "id": "mig_crabmdkb6en8psfmr1o0",
+  "parentID": "mig_crabm1cb6en8psfmr1n0",
+  "checksum": "1:c968dfbbb76f55459f9ae297b73348853d5e4f65be5659903646e7ee9da8d0fe",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "productPrice",
+          "type": "text",
+          "defaultValue": "0"
+        },
+        "table": "Produktet"
+      }
+    }
+  ]
+}
