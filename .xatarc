@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Andi-Lilaj-s-workspace-s9rdlr.eu-central-1.xata.sh/db/menutech",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
