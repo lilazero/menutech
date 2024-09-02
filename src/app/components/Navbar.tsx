@@ -1,19 +1,27 @@
-import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
-
+import {
+  LoginLink,
+  LogoutLink,
+  RegisterLink,
+} from '@kinde-oss/kinde-auth-nextjs/components';
+import MaxWidthWrapper from './MaxWidthWrapper';
+import Link from 'next/link';
+import AuthControlButtons from './AuthControlButtons';
 
 function Navbar() {
   return (
-    <nav className="">
-      <div className="flex gap-4  text-center"> 
-        <LoginLink>Sign in</LoginLink>
-        <RegisterLink>Sign up</RegisterLink>
-        <LogoutLink>Log out</LogoutLink>
+    <nav className='sticky z-[100] h-14 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
+      <MaxWidthWrapper>
+        <div className='flex items-center justify-between  border-b h-14 border-zinc-200'>
+          <Link href='/' className='z-40 flex font-semibold'>
+            Menu<span className='text-red-800'>Tech</span>
+          </Link>
+          <div className='flex gap-4 '>
+            <AuthControlButtons />
+          </div>
         </div>
+      </MaxWidthWrapper>
     </nav>
   );
-} 
-
-//harrova ta eksportoj
-//ja pse s'me doli si import suggestion
+}
 
 export default Navbar;
