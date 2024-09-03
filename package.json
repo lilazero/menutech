@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.3.7",
     "@kinde-oss/kinde-auth-nextjs": "^2.3.8",
     "@xata.io/client": "^0.30.0",
     "next": "14.2.7",

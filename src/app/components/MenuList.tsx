@@ -1,5 +1,5 @@
 import ProduktetComponent from './ProduktetComponent';
-import { getXataClient, ProduktetRecord } from '../../xata';
+import { getXataClient } from '../../xata';
 
 async function MenuList() {
   const xata = getXataClient();

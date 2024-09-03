@@ -11,8 +11,8 @@ function AskLogin() {
         <h1 className='font-bold sm:text-xl md:text-4xl bg-slate-50 bg-opacity-70'>
           Please{' '}
           <Link
-            href='/api/auth/login'
-            className='text-green-600 transition-colors sm:text-xl md:text-5xl hover:text-green-700 animated-underline'
+            href='/'
+            className='text-red-600 transition-colors sm:text-xl md:text-5xl hover:text-red-800 animated-underline'
           >
             Login
           </Link>{' '}
