@@ -1,20 +1,17 @@
-import { ProduktetRecord } from '@/xata';
-
-const TodoComp = ({ produktet }: { produktet: ProduktetRecord }) => {
+import { ProductCreatorRecord, ProduktetRecord } from '@/xata';
+const ProduktetComponent = ({ produktet }: { produktet: ProduktetRecord }) => {
   return (
-    <div className='flex p-2 mb-2 border rounded-lg'>
-      ProduktetComponent.tsx
-      <div className='ml-4'>
-        <header className='flex items-center mb-2'>
+    <div className='p-2 border rounded-lg'>
+      <div className='ml-4 flex justify-between'>
+        <header className='flex '>
           <h5 className='font-medium'> {produktet.productName}</h5>
-          <p className='mx-1 font-light'>|</p>
-          <p className='text-sm'>{produktet.xata.createdAt.toDateString()}</p>
+          <p className='mx-2 font-light'>|</p>
         </header>
-        <p className='mb-2 text-sm text-zinc-500'>{produktet.productPrice}</p>
-        <div className='flex items-center gap-4'></div>
+        <p className='font-medium text-zinc-500 '>{produktet.productPrice}</p>
+        {/* <p className='mb-2 text-sm text-zinc-500'>{produktet.productCreator}</p> */}
       </div>
     </div>
   );
 };
 
-export default TodoComp;
+export default ProduktetComponent;

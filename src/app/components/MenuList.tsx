@@ -1,22 +1,21 @@
-import ProduktetComponent from './ProduktetComponent';
-import { getXataClient } from '../../xata';
-
-async function MenuList() {
+import { getXataClient } from '@/xata';
+export default async function MenuList({ params }: any) {
   const xata = getXataClient();
-  const produktetList = await xata.db.Produktet.getAll();
+  const creator = await xata.db.productCreator
+    .filter({
+      productCreatorName: params,
+    })
+    .getFirst();
+
+  if (!creator) {
+    return <p>Creator not found</p>;
+  }
+
   return (
-    <section className='px-2 py-4 mt-6 border-t border-t-zinc-200 border'>
-      {' '}
-      Product list
-      {produktetList.length < 1 ? (
-        <p className='text-sm text-center text-zinc-500'>S'ka produktet</p>
-      ) : (
-        produktetList.map((produktet) => (
-          <ProduktetComponent produktet={produktet} key={produktet.id} />
-        ))
-      )}
-    </section>
+    <div>
+      MenuList.tsx
+      <h1>{creator.productCreatorName}</h1>
+      <p>{creator.creatorType}</p>
+    </div>
   );
 }
-
-export default MenuList;
