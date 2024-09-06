@@ -10,11 +10,14 @@ export default async ({ params }: { params: any }) => {
 
   return (
     <div>
-      <div className='grid grid-flow-row grid-cols-4'>
-        {productListByBusinessName.map((product) => (
+      {productListByBusinessName.map((product) => (
+        <div
+          className='grid grid-flow-row grid-cols-4'
+          key={product.productName}
+        >
           <ProduktetComponent key={product.productName} produktet={product} />
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };
