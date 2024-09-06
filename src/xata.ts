@@ -13,11 +13,15 @@ const tables = [
       { name: "productName", type: "text", defaultValue: "Pa Emer" },
       { name: "productCreator", type: "text" },
       { name: "productPrice", type: "text", defaultValue: "0" },
+      { name: "Image", type: "file" },
     ],
   },
   {
     name: "productCreator",
-    columns: [{ name: "productCreator", type: "text" }],
+    columns: [
+      { name: "productCreatorName", type: "text" },
+      { name: "creatorType", type: "text", defaultValue: "noType" },
+    ],
   },
 ] as const;
 

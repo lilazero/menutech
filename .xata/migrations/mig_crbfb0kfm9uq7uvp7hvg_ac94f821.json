@@ -1,0 +1,13 @@
+{
+  "id": "mig_crbfb0kfm9uq7uvp7hvg",
+  "parentID": "mig_crbfastr6hm4lflhben0",
+  "checksum": "1:ac94f82165255d644709a4183bab560c5899d17a58103f07630ca2b21b6f3686",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "productType",
+        "table": "productCreator"
+      }
+    }
+  ]
+}

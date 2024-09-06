@@ -1,0 +1,17 @@
+{
+  "id": "mig_crbfaccfm9uq7uvp7hug",
+  "parentID": "mig_crate799hjlasqo2atkg",
+  "checksum": "1:7f23e7f7ab87248899c0d05252239b6742b76854b70954348c956b385deb5438",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "creatorType",
+          "type": "text",
+          "defaultValue": "noType"
+        },
+        "table": "productCreator"
+      }
+    }
+  ]
+}

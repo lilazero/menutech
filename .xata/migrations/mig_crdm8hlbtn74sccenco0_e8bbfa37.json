@@ -1,0 +1,16 @@
+{
+  "id": "mig_crdm8hlbtn74sccenco0",
+  "parentID": "mig_crbgoeb8c9r8nd9s6tl0",
+  "checksum": "1:e8bbfa37de2a95ecb395001d0c2c2060bd72ec1deb8a692d842728b3aad429f3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Image",
+          "type": "file"
+        },
+        "table": "Produktet"
+      }
+    }
+  ]
+}
