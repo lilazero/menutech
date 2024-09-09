@@ -1,6 +1,12 @@
 import { getXataClient } from '@/xata';
 import ProduktetComponent from '../components/ProduktetComponent';
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import ProduktetList from '../components/ui/ProduktetList';
 export default async ({ params }: { params: any }) => {
   const xata = getXataClient();
 
@@ -9,15 +15,22 @@ export default async ({ params }: { params: any }) => {
   }).getMany();
 
   return (
-    <div>
-      {productListByBusinessName.map((product) => (
-        <div
-          className='grid grid-flow-row grid-cols-4'
-          key={product.productName}
-        >
-          <ProduktetComponent key={product.productName} produktet={product} />
-        </div>
-      ))}
-    </div>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div
+            className='w-auto  border  pt-10
+            flex flex-col overflow-y-auto min-h-screen
+
+          '
+          >
+            <ProduktetList params={params} />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>[businessName]/page.tsx</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 };
