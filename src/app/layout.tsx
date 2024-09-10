@@ -27,15 +27,15 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body className={inter.className}>
-          <header>
+          <MaxWidthWrapper>{children}</MaxWidthWrapper>
+          <footer>
             <SignedOut>
               <SignInButton />
             </SignedOut>
             <SignedIn>
               <UserButton />
             </SignedIn>
-          </header>
-          <MaxWidthWrapper>{children}</MaxWidthWrapper>
+          </footer>
         </body>
       </html>
     </ClerkProvider>
