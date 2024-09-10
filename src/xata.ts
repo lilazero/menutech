@@ -8,35 +8,47 @@ import type {
 
 const tables = [
   {
-    name: "Produktet",
+    name: "PRODUCTS",
     columns: [
-      { name: "productName", type: "text", defaultValue: "Pa Emer" },
-      { name: "productCreator", type: "text" },
-      { name: "productPrice", type: "text", defaultValue: "0" },
-      { name: "Image", type: "file" },
+      { name: "ProductName", type: "text", defaultValue: "Pa Emer" },
+      { name: "ProductCreator", type: "text" },
+      { name: "ProductPrice", type: "text", defaultValue: "0" },
+      { name: "ProductImage", type: "file" },
     ],
   },
   {
-    name: "productCreator",
+    name: "BUSINESSES",
     columns: [
-      { name: "productCreatorName", type: "text" },
-      { name: "creatorType", type: "text", defaultValue: "noType" },
+      { name: "BusinessName", type: "text" },
+      { name: "BusinessType", type: "text", defaultValue: "noType" },
+      { name: "BusinessLogoLink", type: "text" },
+      {
+        name: "BusinessEmail",
+        type: "text",
+        notNull: true,
+        defaultValue: "null",
+      },
     ],
   },
+  { name: "PRODUCT-CATEGORIES", columns: [] },
 ] as const;
 
 export type SchemaTables = typeof tables;
 export type InferredTypes = SchemaInference<SchemaTables>;
 
-export type Produktet = InferredTypes["Produktet"];
-export type ProduktetRecord = Produktet & XataRecord;
+export type Products = InferredTypes["PRODUCTS"];
+export type ProductsRecord = Products & XataRecord;
 
-export type ProductCreator = InferredTypes["productCreator"];
-export type ProductCreatorRecord = ProductCreator & XataRecord;
+export type Businesses = InferredTypes["BUSINESSES"];
+export type BusinessesRecord = Businesses & XataRecord;
+
+export type ProductCategories = InferredTypes["PRODUCT-CATEGORIES"];
+export type ProductCategoriesRecord = ProductCategories & XataRecord;
 
 export type DatabaseSchema = {
-  Produktet: ProduktetRecord;
-  productCreator: ProductCreatorRecord;
+  PRODUCTS: ProductsRecord;
+  BUSINESSES: BusinessesRecord;
+  "PRODUCT-CATEGORIES": ProductCategoriesRecord;
 };
 
 const DatabaseClient = buildClient();
