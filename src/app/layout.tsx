@@ -8,9 +8,10 @@ import {
   UserButton,
 } from '@clerk/nextjs';
 import './globals.css';
-import Navbar from './components/Navbar';
 import MaxWidthWrapper from './components/MaxWidthWrapper';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
