@@ -1,8 +1,3 @@
-import {
-  LoginLink,
-  LogoutLink,
-  RegisterLink,
-} from '@kinde-oss/kinde-auth-nextjs/components';
 import MaxWidthWrapper from './MaxWidthWrapper';
 import Link from 'next/link';
 import AuthControlButtons from './AuthControlButtons';
