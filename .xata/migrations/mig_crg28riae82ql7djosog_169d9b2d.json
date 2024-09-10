@@ -1,0 +1,18 @@
+{
+  "id": "mig_crg28riae82ql7djosog",
+  "parentID": "mig_crg1bq2ae82ql7djord0",
+  "checksum": "1:169d9b2d85c5dd44ebd7f294e0e317a97fccb6a579fc34194ad4954d01dda428",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "BusinessEmail",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "null"
+        },
+        "table": "BUSINESSES"
+      }
+    }
+  ]
+}

@@ -10,7 +10,7 @@
           "type": "text",
           "defaultValue": "0"
         },
-        "table": "Produktet"
+        "table": "Produkt"
       }
     }
   ]

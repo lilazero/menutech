@@ -1,0 +1,13 @@
+{
+  "id": "mig_crg0ogf8tgt8te075nj0",
+  "parentID": "mig_crg0ngn8tgt8te075ni0",
+  "checksum": "1:8246c1d177d743b45ea0ff52a37e5131c4cb4f54b6bab1ff701dc1fe7d8aeb03",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "BUSINESSES",
+        "oldName": "BUSINESS"
+      }
+    }
+  ]
+}

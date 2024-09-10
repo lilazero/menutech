@@ -6,8 +6,8 @@
     {
       "renameColumn": {
         "newName": "productName",
-        "oldName": "emriProduktetit",
-        "table": "Produktet"
+        "oldName": "emriProduktit",
+        "table": "Produkt"
       }
     }
   ]

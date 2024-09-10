@@ -1,0 +1,14 @@
+{
+  "id": "mig_crg0n2v8tgt8te075nh0",
+  "parentID": "mig_crg0mn78tgt8te075ng0",
+  "checksum": "1:db76bc482b4fdfaaef5b8eef2d60757cb6b3be4e98c0fab75c22cbb3fdb43c8c",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "BusinessType",
+        "oldName": "creatorType",
+        "table": "BUSINESS"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "mig_crg0os78tgt8te075nl0",
+  "parentID": "mig_crg0oo78tgt8te075nk0",
+  "checksum": "1:5bacd03f17893619efd60ac87e877711e02638f6ee2e31501521353adb2bfd73",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "ProductName",
+        "oldName": "productName",
+        "table": "PRODUCTS"
+      }
+    }
+  ]
+}

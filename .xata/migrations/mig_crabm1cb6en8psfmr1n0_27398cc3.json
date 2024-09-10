@@ -9,7 +9,7 @@
           "name": "productCreator",
           "type": "text"
         },
-        "table": "Produktet"
+        "table": "Produkt"
       }
     }
   ]

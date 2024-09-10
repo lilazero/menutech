@@ -1,0 +1,16 @@
+{
+  "id": "mig_crg0ngn8tgt8te075ni0",
+  "parentID": "mig_crg0n2v8tgt8te075nh0",
+  "checksum": "1:11894bd47bec451312e9ad734aef16b810e2ce6c19bb35f4ae50309b7134d781",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "BusinessLogoLink",
+          "type": "text"
+        },
+        "table": "BUSINESS"
+      }
+    }
+  ]
+}

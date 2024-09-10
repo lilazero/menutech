@@ -6,11 +6,11 @@
     {
       "addColumn": {
         "column": {
-          "name": "emriProduktetit",
+          "name": "emriProduktit",
           "type": "text",
           "defaultValue": "Pa Emer"
         },
-        "table": "Produktet"
+        "table": "Produkt"
       }
     }
   ]
