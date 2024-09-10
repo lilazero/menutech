@@ -34,15 +34,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { getXataClient, ProduktetRecord } from '@/xata';
+import { getXataClient } from '@/xata';
 import MaxWidthWrapper from '../MaxWidthWrapper';
+import { auth } from '@clerk/nextjs/server';
 
 export default async function Component({ params }: { params: any }) {
   const xata = getXataClient();
 
-  const productListByBusinessName = await xata.db.Produktet.filter({
-    productCreator: params.businessName,
+  const { userId } = auth();
+  const businessEmail = await xata.db.BUSINESSES.filter({
+    BusinessEmail: params.businessName,
   }).getMany();
+  const productListByBusinessName = await xata.db.PRODUCTS.filter({
+    ProductCreator: params.businessName,
+  }).getMany();
+
+  console.log('businessEmail:', businessEmail);
 
   return (
     <MaxWidthWrapper>
@@ -94,40 +101,46 @@ export default async function Component({ params }: { params: any }) {
               </TableRow>
             </TableHeader>
             {productListByBusinessName.map((product) => (
-              <TableBody key={product.productName}>
+              <TableBody key={product.ProductName}>
                 <TableRow>
-                  <TableCell className='hidden sm:table-cell'>
+                  <TableCell
+                    about='Image cell'
+                    className='hidden sm:table-cell'
+                  >
                     <Image
-                      alt='Product image'
-                      className='aspect-auto rounded-[0.1rem]  '
-                      height='40'
-                      src='next.svg'
-                      width='100'
+                      src={product.ProductImage?.url ?? ''}
+                      // width={product.ProductImage?.attributes?.width}
+                      // height={product.ProductImage?.attributes?.height}
+                      width={60}
+                      height={60}
+                      alt={product.ProductImage?.name ?? ''}
                     />
                   </TableCell>
                   <TableCell className='font-medium'>
-                    {product.productName}
+                    {product.ProductName}
                   </TableCell>
-                  <TableCell>{product.productPrice} Euro</TableCell>
-                  <TableCell>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button
-                          aria-haspopup='true'
-                          size='icon'
-                          variant='ghost'
-                        >
-                          <MoreHorizontal className='h-4 w-4' />
-                          <span className='sr-only'>Toggle menu</span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align='end'>
-                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
-                        <DropdownMenuItem>Delete</DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </TableCell>
+                  <TableCell>{product.ProductPrice} Euro</TableCell>
+                  {userId === '1' ? (
+                    <TableCell>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button
+                            aria-haspopup='true'
+                            size='icon'
+                            variant='ghost'
+                          >
+                            <MoreHorizontal className='h-4 w-4' />
+                            <span className='sr-only'>Toggle menu</span>
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align='end'>
+                          <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                          <DropdownMenuItem>Edit</DropdownMenuItem>
+                          <DropdownMenuItem>Delete</DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </TableCell>
+                  ) : null}
                 </TableRow>
               </TableBody>
             ))}
