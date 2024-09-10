@@ -1,7 +1,7 @@
-import { ProductCreatorRecord } from '@/xata';
+import { BusinessesRecord } from '@/xata';
 import Link from 'next/link';
 
-const BusinessComp = ({ creator }: { creator: ProductCreatorRecord }) => {
+const BusinessComp = ({ creator }: { creator: BusinessesRecord }) => {
   return (
     <div className='flex p-2 mb-2 border rounded-lg'>
       BusinessComponent.tsx
@@ -11,13 +11,13 @@ const BusinessComp = ({ creator }: { creator: ProductCreatorRecord }) => {
             href={{
               pathname: '/[businessName]',
             }}
-            as={`/${creator.productCreatorName}`}
+            as={`/${creator.BusinessName}`}
           >
-            <h5 className='font-medium'> {creator.productCreatorName}</h5>
+            <h5 className='font-medium'> {creator.BusinessName}</h5>
           </Link>
           <p className='mx-1 font-light'>|</p>
         </header>
-        <p className='mb-2 text-sm text-zinc-500'>{creator.creatorType}</p>
+        <p className='mb-2 text-sm text-zinc-500'>{creator.BusinessType}</p>
         <div className='flex items-center gap-4'></div>
       </div>
     </div>
