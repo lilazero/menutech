@@ -1,5 +1,4 @@
 import { getXataClient } from '@/xata';
-import ProduktetComponent from '../components/ProduktetComponent';
 import {
   Tooltip,
   TooltipContent,
@@ -10,8 +9,8 @@ import ProduktetList from '../components/ui/ProduktetList';
 export default async ({ params }: { params: any }) => {
   const xata = getXataClient();
 
-  const productListByBusinessName = await xata.db.Produktet.filter({
-    productCreator: params.businessName,
+  const productListByBusinessName = await xata.db.PRODUCTS.filter({
+    ProductCreator: params.businessName,
   }).getMany();
 
   return (
@@ -20,9 +19,7 @@ export default async ({ params }: { params: any }) => {
         <TooltipTrigger asChild>
           <div
             className='w-auto  border  pt-10
-            flex flex-col overflow-y-auto min-h-screen
-
-          '
+            flex flex-col overflow-y-auto min-h-screen'
           >
             <ProduktetList params={params} />
           </div>
