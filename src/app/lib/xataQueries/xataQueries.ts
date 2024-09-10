@@ -1,7 +1,6 @@
 // src/lib/xataQueries.ts
 
 import { XataClient } from '@/xata';
-import { XataApiClient } from '@xata.io/client';
 
 const xata = new XataClient({
   apiKey: process.env.XATA_API_KEY,
@@ -9,21 +8,21 @@ const xata = new XataClient({
 });
 
 export async function getProduktet() {
-  const records = await xata.db.Produktet.getAll();
+  const records = await xata.db.PRODUCTS.getAll();
   return records;
 }
 
-export async function getProduktetById(id: string) {
-  const record = await xata.db.Produktet.read(id);
+export async function getProductsById(id: string) {
+  const record = await xata.db.PRODUCTS.read(id);
   return record;
 }
-export function getProductByCreator(creatorName: string) {
-  const record = xata.db.productCreator.read(creatorName);
+export function getProductByCreator(name: string) {
+  const record = xata.db.BUSINESSES.read(name);
   return record;
 }
 
-export async function getProduktetByProductName(productName: string) {
-  const records = await xata.db.Produktet.read(productName);
+export async function getProductsByProductName(productName: string) {
+  const records = await xata.db.PRODUCTS.read(productName);
   {
     return records;
   }
