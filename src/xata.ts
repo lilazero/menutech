@@ -14,6 +14,12 @@ const tables = [
       { name: "ProductCreator", type: "text" },
       { name: "ProductPrice", type: "text", defaultValue: "0" },
       { name: "ProductImage", type: "file" },
+      {
+        name: "ProductCategory",
+        type: "text",
+        notNull: true,
+        defaultValue: "Misc.",
+      },
     ],
   },
   {

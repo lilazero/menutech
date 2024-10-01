@@ -1,18 +1,17 @@
-import { getXataClient } from '@/xata';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import ProduktetList from '../components/ui/ProduktetList';
-export default async ({ params }: { params: any }) => {
-  const xata = getXataClient();
-
-  const productListByBusinessName = await xata.db.PRODUCTS.filter({
-    ProductCreator: params.businessName,
-  }).getMany();
-
+import ProductTable from '../../components/ProductTable';
+import { Suspense } from 'react';
+import { LatestInvoicesSkeleton } from '../../components/ui/skeletons';
+async function BusinessNamePage({
+  params: businessRecord,
+}: {
+  params: { businessName: any };
+}) {
   return (
     <TooltipProvider>
       <Tooltip>
@@ -21,7 +20,9 @@ export default async ({ params }: { params: any }) => {
             className='w-auto  border  pt-10
             flex flex-col overflow-y-auto min-h-screen'
           >
-            <ProduktetList params={params} />
+            <Suspense fallback={<LatestInvoicesSkeleton />}>
+              <ProductTable businessRecord={businessRecord} />{' '}
+            </Suspense>
           </div>
         </TooltipTrigger>
         <TooltipContent>
@@ -30,4 +31,6 @@ export default async ({ params }: { params: any }) => {
       </Tooltip>
     </TooltipProvider>
   );
-};
+}
+
+export default BusinessNamePage;

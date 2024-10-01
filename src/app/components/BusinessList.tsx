@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { getXataClient } from '@/xata';
 import MaxWidthWrapper from './MaxWidthWrapper';
 
@@ -38,8 +37,8 @@ import {
 
 export async function BusinessList() {
   const xata = getXataClient();
-  const businessList = await xata.db.BUSINESSES.getAll();
-  const CreatorChoice = '';
+  const businessRecord = await xata.db.BUSINESSES.getAll();
+  const BusinessChoice = '';
 
   return (
     <section className='px-2 py-1 border-t border-t-zinc-200 border'>
@@ -59,13 +58,13 @@ export async function BusinessList() {
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>BusinessType</SelectLabel>
-                      {businessList.map((creator) => (
+                      {businessRecord.map((p) => (
                         <SelectItem
-                          key={creator.id}
-                          value={`${creator.id}`}
-                          id={`${CreatorChoice}`}
+                          key={p.id}
+                          value={`${p.id}`}
+                          id={`${BusinessChoice}`}
                         >
-                          {creator.BusinessType}
+                          {p.BusinessType}
                         </SelectItem>
                       ))}
                     </SelectGroup>
@@ -86,17 +85,15 @@ export async function BusinessList() {
                   </TableHead>
                 </TableRow>
               </TableHeader>
-              {businessList.map((creator) => (
+              {businessRecord.map((creator) => (
                 <TableBody className=' ' key={creator.id}>
                   <TableRow className='  '>
                     <TableCell className='size-32 sm:table-cell'>
                       <img
-                        src={creator.BusinessLogoLink ?? ''}
-                        // width={product.ProductImage?.attributes?.width}
-                        // height={product.ProductImage?.attributes?.height}
+                        src={creator.BusinessLogoLink ?? 'no image'}
                         width={60}
                         height={60}
-                        alt={creator.BusinessName ?? ''}
+                        alt={creator.BusinessName ?? 'no image'}
                       />
                     </TableCell>
                     <TooltipProvider>
@@ -105,9 +102,9 @@ export async function BusinessList() {
                           <TableCell className='font-medium text-center text-[60px]'>
                             <Link
                               href={{
-                                pathname: '/[businessName]',
+                                pathname: 'menu/[businessName]',
                               }}
-                              as={`/${creator.BusinessName}`}
+                              as={`menu/${creator.BusinessName}`}
                             >
                               <h5 className='font-medium'>
                                 {' '}

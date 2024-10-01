@@ -1,0 +1,18 @@
+{
+  "id": "mig_crgv1u76ve56t4b9k37g",
+  "parentID": "mig_crg28riae82ql7djosog",
+  "checksum": "1:6b499722c58aec7a5e5cb07fd969733deef323ffbd3f4910b905e5224c1cd952",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "ProductCategory",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "Misc."
+        },
+        "table": "PRODUCTS"
+      }
+    }
+  ]
+}
