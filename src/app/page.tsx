@@ -1,4 +1,4 @@
-import { BusinessList } from './components/BusinessList';
+import { BusinessList } from './BusinessList';
 
 export default function LandingPage() {
   return (
