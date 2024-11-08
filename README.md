@@ -12,4 +12,4 @@ pnpm dev
 
 Open [http://localhost:3005](http://localhost:3005) with your browser to see the result.
 
-
+![Alt](https://repobeats.axiom.co/api/embed/b953d1883aae6825b6b1f7e258cda7969c1854b5.svg "Repobeats analytics image")
