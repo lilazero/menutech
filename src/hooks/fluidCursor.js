@@ -8,11 +8,11 @@ const useFluidCursor = () => {
     SIM_RESOLUTION: 128,
     DYE_RESOLUTION: 1440,
     CAPTURE_RESOLUTION: 512,
-    DENSITY_DISSIPATION: 3.5,
-    VELOCITY_DISSIPATION: 2,
+    DENSITY_DISSIPATION: 0.5, //default 4
+    VELOCITY_DISSIPATION: 0.5,  //default 4
     PRESSURE: 0.1,
     PRESSURE_ITERATIONS: 20,
-    CURL: 3,
+    CURL: 4, //default 3
     SPLAT_RADIUS: 0.2,
     SPLAT_FORCE: 6000,
     SHADING: true,
