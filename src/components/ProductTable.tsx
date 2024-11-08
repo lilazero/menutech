@@ -22,7 +22,7 @@ import MaxWidthWrapper from './MaxWidthWrapper';
 import { getXataClient } from '@/xata';
 import AdminEditButton from './ui/AdminEditButton';
 import { getProductsByBusinessName } from '@/lib/DataAccess';
-import { ProductCategorySelector } from '@/app/components/ProductCategorySelector';
+import { ProductCategorySelector } from '@/components/ProductCategorySelector';
 import ProtectedComponent from './ProtectedComponent';
 async function ProductTable({ businessRecord }: { businessRecord: any }) {
   //

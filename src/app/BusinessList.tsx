@@ -1,5 +1,5 @@
 import { getXataClient } from '@/xata';
-import MaxWidthWrapper from './components/MaxWidthWrapper';
+import MaxWidthWrapper from '../components/MaxWidthWrapper';
 
 import {
   Card,

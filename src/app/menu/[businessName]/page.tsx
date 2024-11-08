@@ -4,9 +4,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import ProductTable from '../../components/ProductTable';
+import ProductTable from '../../../components/ProductTable';
 import { Suspense } from 'react';
-import { LatestInvoicesSkeleton } from '../../components/ui/skeletons';
+import { LatestInvoicesSkeleton } from '../../../components/ui/skeletons';
 async function BusinessNamePage({
   params: businessRecord,
 }: {

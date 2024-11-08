@@ -8,11 +8,12 @@ import {
   UserButton,
 } from '@clerk/nextjs';
 import './globals.css';
-import MaxWidthWrapper from './components/MaxWidthWrapper';
-import { ThemeProvider } from './components/theme-provider';
+import MaxWidthWrapper from '../components/MaxWidthWrapper';
+import { ThemeProvider } from '../components/theme-provider';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import Navbar from './components/Navbar';
+import Navbar from '../components/Navbar';
+import FluidCursor from '@/components/ui/fluid-cursor';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -36,6 +37,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <MaxWidthWrapper>
+              <FluidCursor />
               <Navbar />
               {children}
             </MaxWidthWrapper>
