@@ -1,29 +1,52 @@
 import ProtectedRoute from '@/components/ProtectedRoute';
-import { Card } from '@/components/ui/card';
-import { Metadata } from 'next';
-import Head from 'next/head';
+import { Product } from '@/components/ui/Product';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { getProductAction, getCategoriesAction } from '@/lib/actions/product';
 import Link from 'next/link';
+import { ProductData, Category, isValidCategory } from '@/types/product';
+import { notFound } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Edit Menu',
-  description: 'Edit your menu items here',
-};
+interface EditMenuPageProps {
+  params: {
+    productIdToEdit: string;
+    businessName: string;
+  }
+}
 
-export default function EditMenuPage() {
-  return (
-    <ProtectedRoute>
+export default async function EditMenuPage({ params }: EditMenuPageProps) {
+  try {
+    const [product, rawCategories] = await Promise.all([
+      getProductAction(params.productIdToEdit),
+      getCategoriesAction()
+    ]);
 
-    <div className='h-full'>
-      <main>
-        <Card>
+    // Validate categories
+    const categories = rawCategories.filter(isValidCategory);
 
-        <h1>Edit Menu</h1>
-        <p>Welcome to the menu editing page.</p>
+    if (!product || !Array.isArray(categories)) {
+      notFound();
+    }
 
-        <Link href='/'>Go back to Homepage</Link>
-        </Card>
-      </main>
-    </div>
-    </ProtectedRoute>
-  );
+    return (
+      <ProtectedRoute>
+        <div className='h-full'>
+          <Card>
+            <CardHeader>
+              <CardTitle>Edit Menu Item</CardTitle>
+              <CardDescription>Make changes to your menu item</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Product initialProduct={product} categories={categories} />
+            </CardContent>
+            <CardFooter>
+              <Link href={`/menu/${params.businessName}`}>Back to Menu</Link>
+            </CardFooter>
+          </Card>
+        </div>
+      </ProtectedRoute>
+    );
+  } catch (error) {
+    console.error('Error loading product:', error);
+    notFound();
+  }
 }

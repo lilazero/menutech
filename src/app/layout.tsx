@@ -14,6 +14,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from '../components/Navbar';
 import FluidCursor from '@/components/ui/fluid-cursor';
+import { Toaster } from 'sonner';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -48,6 +50,7 @@ export default function RootLayout({
                 <UserButton />
               </SignedIn>
             </footer>
+            <Toaster position='top-right' richColors />
           </ThemeProvider>
         </body>
       </html>

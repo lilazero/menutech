@@ -29,6 +29,7 @@
     "next-themes": "^0.3.0",
     "react": "19.0.0-rc-e210d081-20240909",
     "react-dom": "19.0.0-rc-e210d081-20240909",
+    "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.5.5"
