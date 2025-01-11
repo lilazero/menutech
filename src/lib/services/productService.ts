@@ -28,9 +28,25 @@ export class ProductService {
   }
 
   async getProduct(id: string): Promise<ProductData> {
-    const product = await this.xata.db.PRODUCTS.read(id);
-    if (!product) throw new Error('Product not found');
-    return this.serializeProduct(product);
+    try {
+      const product = await this.xata.db.PRODUCTS.read(id);
+      if (!product) throw new Error('Product not found');
+      return this.serializeProduct(product);
+    } catch (error) {
+      throw new Error(`Failed to get product: ${error}`);
+    }
+  }
+
+  async getCategories(): Promise<Category[]> {
+    try {
+      const records = await this.xata.db['PRODUCT-CATEGORIES'].getMany();
+      return records
+        .map(this.serializeCategory)
+        .filter((category): category is Category => isValidCategory(category));
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+      return [];
+    }
   }
 
   async updateProduct(id: string, data: Partial<ProductData>): Promise<ApiResponse<ProductData>> {
@@ -54,18 +70,6 @@ export class ProductService {
       return { success: true, data: this.serializeProduct(updated) };
     } catch (error) {
       return { success: false, error: String(error) };
-    }
-  }
-
-  async getCategories(): Promise<Category[]> {
-    try {
-      const records = await this.xata.db['PRODUCT-CATEGORIES'].getMany();
-      return records
-        .map(this.serializeCategory)
-        .filter((category): category is Category => isValidCategory(category));
-    } catch (error) {
-      console.error('Error fetching categories:', error);
-      return [];
     }
   }
 }
