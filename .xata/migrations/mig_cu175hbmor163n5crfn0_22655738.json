@@ -1,0 +1,18 @@
+{
+  "id": "mig_cu175hbmor163n5crfn0",
+  "parentID": "mig_crgv1u76ve56t4b9k37g",
+  "checksum": "1:226557385fc03d79ef01284438b19f2b1f6b7d1d3cb4a78990cc53008f32550c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "CategoryName",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "Misc."
+        },
+        "table": "PRODUCT-CATEGORIES"
+      }
+    }
+  ]
+}

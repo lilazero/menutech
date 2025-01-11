@@ -1,0 +1,13 @@
+{
+  "id": "mig_cu17608t56ppkgldgbd0",
+  "parentID": "mig_cu175hbmor163n5crfn0",
+  "checksum": "1:7ab260a7b2a97a2c4744aa49b5f845fe3b7ba1ebf4acd507c48d4241aa071948",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "CategoryName",
+        "table": "PRODUCT-CATEGORIES"
+      }
+    }
+  ]
+}
