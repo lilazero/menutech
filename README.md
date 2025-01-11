@@ -9,6 +9,8 @@ First, run the development server:
 pnpm dev
 
 ```
+![Screenshot 2025-01-11 155616](https://github.com/user-attachments/assets/50d6bf08-bfbc-4ef3-9564-63ab622a2f85)
+![Screenshot 2025-01-11 155650](https://github.com/user-attachments/assets/0f74595b-3e92-405c-bf34-3b66f778087b)
 
 Open [http://localhost:3005](http://localhost:3005) with your browser to see the result.
 
