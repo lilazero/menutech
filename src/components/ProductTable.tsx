@@ -80,7 +80,7 @@ async function ProductTable({ businessRecord }: { businessRecord: any }) {
                   </TableCell>
                   <TableCell>{product.ProductPrice} Euro</TableCell>
                   <ProtectedComponent>
-                    <AdminEditButton productID={product.id} />
+                    <AdminEditButton productID={product.id} businessName={businessRecord.businessName} />
                   </ProtectedComponent>
                 </TableRow>
               </TableBody>

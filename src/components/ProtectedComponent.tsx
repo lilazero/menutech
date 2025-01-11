@@ -5,7 +5,7 @@ export default async function ProtectedComponent({
 }: {
   children: React.ReactNode;
 }) {
-  const { userId, has } = auth();
+  const { has } = auth();
   const canEdit = has({ permission: 'org:product:edit' });
   if (canEdit) {
     return <>{children}</>;

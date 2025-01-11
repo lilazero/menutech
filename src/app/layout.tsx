@@ -40,7 +40,7 @@ export default function RootLayout({
               <Navbar />
               {children}
             </MaxWidthWrapper>
-            <footer>
+            <footer className='fixed bottom-0 w-full z-50'>
               <SignedOut>
                 <SignInButton />
               </SignedOut>

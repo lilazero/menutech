@@ -13,13 +13,14 @@ import { useRouter } from 'next/navigation';
 
 interface AdminEditButtonProps {
   productID: string;
+  businessName: string;
 }
 
-const AdminEditButton: React.FC<AdminEditButtonProps> = ({ productID }) => {
+const AdminEditButton: React.FC<AdminEditButtonProps> = ({ productID, businessName }) => {
   const router = useRouter();
 
   const handleEdit = () => {
-    router.push(`edit/${productID}`);
+    router.push(`${businessName}/${productID}/edit/`);
   };
 
   return (
