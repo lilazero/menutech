@@ -1,6 +1,7 @@
 import MaxWidthWrapper from './MaxWidthWrapper';
 import Link from 'next/link';
 import { ThemeSelector } from './ui/theme-picker';
+import { ThemeSwitcher } from './ui/theme-switcher';
 
 function Navbar() {
   return (
@@ -10,7 +11,7 @@ function Navbar() {
           <Link href='/' className='z-40 flex font-semibold'>
             Menu<span className='text-red-800'>Tech</span>
           </Link>
-          <ThemeSelector />
+          <ThemeSwitcher />
         </div>
       </MaxWidthWrapper>
     </nav>
