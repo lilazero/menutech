@@ -1,6 +1,6 @@
 import { auth } from '@clerk/nextjs/server';
 
-export default async function ProtectedComponent({
+export default async function ProductEditProtectedComponent({
   children,
 }: {
   children: React.ReactNode;

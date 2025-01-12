@@ -23,7 +23,7 @@ import { getXataClient } from '@/xata';
 import AdminEditButton from './ui/AdminEditButton';
 import { getProductsByBusinessName } from '@/lib/DataAccess';
 import { ProductCategorySelector } from '@/components/ProductCategorySelector';
-import ProtectedComponent from './ProtectedComponent';
+import ProductEditProtectedComponent from './ProductEditProtectedComponent';
 async function ProductTable({ businessRecord }: { businessRecord: any }) {
   //
   const xata = getXataClient();
@@ -79,9 +79,9 @@ async function ProductTable({ businessRecord }: { businessRecord: any }) {
                     {product.ProductName}
                   </TableCell>
                   <TableCell>{product.ProductPrice} Euro</TableCell>
-                  <ProtectedComponent>
+                  <ProductEditProtectedComponent>
                     <AdminEditButton productID={product.id} businessName={businessRecord.businessName} />
-                  </ProtectedComponent>
+                  </ProductEditProtectedComponent>
                 </TableRow>
               </TableBody>
             ))}
