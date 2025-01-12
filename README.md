@@ -9,6 +9,9 @@ First, run the development server:
 pnpm dev
 
 ```
+adding a new business from admin panel
+![image](https://github.com/user-attachments/assets/dc7ce5af-bcac-4f6c-8c23-39e677fa4ff8)
+
 ![Screenshot 2025-01-11 155616](https://github.com/user-attachments/assets/50d6bf08-bfbc-4ef3-9564-63ab622a2f85)
 ![Screenshot 2025-01-11 155650](https://github.com/user-attachments/assets/0f74595b-3e92-405c-bf34-3b66f778087b)
 
