@@ -27,6 +27,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import Link from 'next/link';
+import CreateNewBusinessBtnComponent from '../components/ui/CreateBusinessBtnComponent';
 
 import {
   Tooltip,
@@ -34,6 +35,7 @@ import {
   TooltipContent,
   TooltipProvider,
 } from '@/components/ui/tooltip';
+import BusinessCreateProtectedComponent from '@/components/BusinessCreateProtectedComponent';
 
 export async function BusinessList() {
   const xata = getXataClient();
@@ -120,6 +122,9 @@ export async function BusinessList() {
                 </TableBody>
               ))}
             </Table>
+            <BusinessCreateProtectedComponent>
+              <CreateNewBusinessBtnComponent/>
+            </BusinessCreateProtectedComponent>
           </CardContent>
           <CardFooter>
             <div className='text-xs text-muted-foreground'>
